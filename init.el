@@ -1,9 +1,4 @@
 ;;; emacs setting
-(require 'package)
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
-(add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/"))
-(package-initialize)
-
 ;;; package should install
 ;; 1.  company  -> complete anything
 ;; 2.  racket-mode
