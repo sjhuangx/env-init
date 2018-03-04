@@ -173,7 +173,7 @@
 (setq sr-speedbar-width 25)
 (setq dframe-update-speed t)
 (setq speedbar-show-unknown-files t)
-(global-set-key (kbd "<f5>")
+(global-set-key (kbd "<f6>")
                 (lambda ()
                   (interactive)
                   (sr-speedbar-toggle)))
