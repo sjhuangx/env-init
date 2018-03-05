@@ -14,5 +14,26 @@
 (add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/"))
 (package-initialize)
 
+;; install package
+(when (not package-archive-contents)
+  (package-refresh-contents))
+
+(defvar myPackages
+  '(company
+    racket-mode
+    rainbow-delimiters
+    sr-speedbar
+    tabbar
+    session
+    highlight-indent-guides
+    windresize
+    slime
+    slime-company))
+
+(mapc #'(lambda (package)
+    (unless (package-installed-p package)
+      (package-install package)))
+      myPackages)
+
 ;;(setenv "HOME" "~/emacs") ; you can change this dir to the place you like
 (load "~/Code/env-init/init.el")
