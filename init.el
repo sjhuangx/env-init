@@ -51,19 +51,19 @@
 
 ;; 显示缩进线
 (require 'highlight-indent-guides)
-(add-hook 'prog-mode-hook 'highlight-indent-guides-mode)
 (setq highlight-indent-guides-method 'character)
+(add-hook 'prog-mode-hook 'highlight-indent-guides-mode)
 
 ;; windows字体设置
 (if (eq system-type 'windows-nt)
-    (set-default-font "Courier New-14"))
+    (set-default-font "Courier New-12"))
 
 ;; windows中文字体设置为雅黑
 (if (eq system-type 'windows-nt)
     (dolist (charset '(kana han symbol cjk-misc bopomofo))
       (set-fontset-font (frame-parameter nil 'font)
                         charset
-                        (font-spec :family "Microsoft Yahei" :size 18))))
+                        (font-spec :family "Microsoft Yahei" :size 16))))
 
 ;; 设置默认文件编码为utf-8
 (prefer-coding-system 'utf-8)
