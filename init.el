@@ -154,7 +154,7 @@
 (add-hook 'shell-mode-hook 'kill-buffer-when-exit)
 
 ;; 清除代码中不必要的空格和TAB
-(global-set-key [f4] 'whitespace-cleanup)
+(global-set-key [f6] 'whitespace-cleanup)
 
 ;; ibuffer - operate on buffers like dired
 (global-set-key (kbd "C-x C-b") 'ibuffer)
@@ -173,7 +173,7 @@
 (setq sr-speedbar-width 25)
 (setq dframe-update-speed t)
 (setq speedbar-show-unknown-files t)
-(global-set-key (kbd "<f6>")
+(global-set-key (kbd "<f4>")
                 (lambda ()
                   (interactive)
                   (sr-speedbar-toggle)))
