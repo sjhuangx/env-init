@@ -28,7 +28,8 @@
     highlight-indent-guides
     windresize
     slime
-    slime-company))
+    slime-company
+    smooth-scrolling))
 
 (mapc #'(lambda (package)
     (unless (package-installed-p package)

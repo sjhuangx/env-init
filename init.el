@@ -10,6 +10,7 @@
 ;; 8.  windresize  调整窗口大小, M-x: windresize
 ;; 9.  slime
 ;; 10. slime-company
+;; 11. smooth-scrolling
 
 ;; 设置默认主题为: deeper-blue
 (load-theme 'deeper-blue t)
@@ -135,6 +136,8 @@
 (global-auto-revert-mode 1)
 
 ;; 鼠标滚轮，默认的滚动太快，这里改为3行
+(require 'smooth-scrolling)
+(smooth-scrolling-mode 1)
 (defun up-slightly () (interactive) (scroll-up 3))
 (defun down-slightly () (interactive) (scroll-down 3))
 (global-set-key [mouse-4] 'down-slightly)
