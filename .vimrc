@@ -35,7 +35,7 @@ set wildmenu
 set incsearch
 set hlsearch
 set lbr
-set mouse=a
+set mouse-=a
 set selection=inclusive
 set clipboard+=unnamed
 
