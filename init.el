@@ -18,6 +18,7 @@
 ;; 关闭工具栏
 (tool-bar-mode 0)
 
+
 ;; 用空格代替TAB
 (setq-default indent-tabs-mode nil)
 (setq default-tab-width 4)
@@ -210,12 +211,32 @@
 ;;;--------------------------------------------------------------------
 ;; see: http://blog.csdn.net/loveaborn/article/details/46763163
 ;; racket-mode setting
+;;--------------------------------------------------------------------
 (require 'racket-mode)
 (setq racket-racket-program "racket")
 (setq racket-raco-program "raco")
 ;; make tab key do indent AND completion
 (set-default 'tab-always-indent 'complete)
 
+
 ;; slime 设置
 (setq inferior-lisp-program "sbcl")
 (setq slime-contribs '(slime-fancy slime-banner slime-company))
+
+
+;;-----------------------------------------------------------------
+;; 解决保存文件很慢问题 Disable all version control
+(setq vc-handled-backends nil)
+; try to improve slow performance on windows.
+(setq w32-get-true-file-attributes nil)
+;; 显示保存文件profile
+(defun profiled-save-buffer ()
+  "Profile save buffer."
+  (interactive)
+  (profiler-start 'cpu)
+  (save-buffer)
+  (profiler-report)
+  (profiler-stop)
+  (select-window (previous-window)))
+
+
